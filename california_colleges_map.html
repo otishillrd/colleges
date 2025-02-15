@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>California Colleges and Universities Map</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKipkjHrP1YSRWgmx3yQk0ZvYnI8em5pw"></script>
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: {lat: 34.0522, lng: -118.2437} // Centered around Los Angeles
+            });
+
+            var locations = [{'lat': 34.0689, 'lng': -118.4452, 'title': 'UCLA'}, {'lat': 33.6405, 'lng': -117.8443, 'title': 'UC Irvine'}, {'lat': 33.9737, 'lng': -117.3281, 'title': 'UC Riverside'}, {'lat': 33.8825, 'lng': -117.885, 'title': 'CSU Fullerton'}, {'lat': 33.7838, 'lng': -118.1141, 'title': 'CSU Long Beach'}, {'lat': 34.2381, 'lng': -118.528, 'title': 'CSU Northridge'}, {'lat': 34.1623, 'lng': -119.043, 'title': 'CSU Channel Islands'}, {'lat': 34.0585, 'lng': -117.8216, 'title': 'Cal Poly Pomona'}, {'lat': 34.0224, 'lng': -118.2851, 'title': 'University of Southern California'}, {'lat': 34.1265, 'lng': -118.211, 'title': 'Occidental College'}, {'lat': 33.97, 'lng': -118.4187, 'title': 'Loyola Marymount University'}, {'lat': 33.7934, 'lng': -117.8526, 'title': 'Chapman University'}, {'lat': 34.1377, 'lng': -118.1253, 'title': 'California Institute of Technology'}, {'lat': 34.0402, 'lng': -118.7075, 'title': 'Pepperdine University'}, {'lat': 34.0967, 'lng': -117.7119, 'title': 'Pomona College'}, {'lat': 34.102, 'lng': -117.7075, 'title': 'Claremont McKenna College'}, {'lat': 34.1036, 'lng': -117.71, 'title': 'Scripps College'}, {'lat': 34.106, 'lng': -117.71, 'title': 'Harvey Mudd College'}, {'lat': 34.1032, 'lng': -117.7075, 'title': 'Pitzer College'}, {'lat': 34.0633, 'lng': -117.1661, 'title': 'University of Redlands'}, {'lat': 34.1003, 'lng': -117.77, 'title': 'University of La Verne'}, {'lat': 33.9754, 'lng': -118.03, 'title': 'Whittier College'}, {'lat': 34.0835, 'lng': -118.4065, 'title': "Mount Saint Mary's University"}, {'lat': 34.1683, 'lng': -118.196, 'title': 'ArtCenter College of Design'}, {'lat': 33.5553, 'lng': -117.7854, 'title': 'Laguna College of Art and Design'}];
+
+            locations.forEach(function(location) {
+                new google.maps.Marker({
+                    position: {lat: location.lat, lng: location.lng},
+                    map: map,
+                    title: location.title
+                });
+            });
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <h2>California Colleges and Universities</h2>
+    <div id="map" style="width: 100%; height: 600px;"></div>
+</body>
+</html>
